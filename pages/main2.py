@@ -2,7 +2,6 @@
 
 import streamlit as st
 from PIL import Image
-import numpy as np
 import base64
 
 from io import BytesIO
@@ -16,6 +15,8 @@ from langchain.prompts import (
     SystemMessagePromptTemplate,
     HumanMessagePromptTemplate
 )
+from dotenv import load_dotenv
+load_dotenv()
 
 
 def image_to_base64(img: Image.Image) -> str:
@@ -27,8 +28,6 @@ def image_to_base64(img: Image.Image) -> str:
 
 # ChatGPT-3.5のモデルのインスタンスの作成
 chat = ChatOpenAI(model_name="gpt-3.5-turbo")
-
-# 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
 
 # セッション内に保存されたチャット履歴のメモリの取得
 try:
@@ -97,7 +96,7 @@ chain = ConversationChain(
 )
 
 # Streamlitによって、タイトル部分のUIをの作成
-st.title("夢子とのチャットルーム1")
+st.title("夢子とのチャットルーム")
 st.caption("白松研 中村美音")
 
 # ハリネズミのアイコンのロード

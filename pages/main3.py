@@ -2,7 +2,6 @@
 
 import streamlit as st
 from PIL import Image
-import numpy as np
 import base64
 
 from io import BytesIO
@@ -16,6 +15,8 @@ from langchain.prompts import (
     SystemMessagePromptTemplate,
     HumanMessagePromptTemplate
 )
+from dotenv import load_dotenv
+load_dotenv()
 
 
 def image_to_base64(img: Image.Image) -> str:
@@ -27,7 +28,6 @@ def image_to_base64(img: Image.Image) -> str:
 
 # ChatGPT-3.5のモデルのインスタンスの作成
 chat = ChatOpenAI(model_name="gpt-3.5-turbo")
-# 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
 
 # セッション内に保存されたチャット履歴のメモリの取得
 try:

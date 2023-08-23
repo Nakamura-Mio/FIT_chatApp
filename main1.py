@@ -2,7 +2,6 @@
 
 import streamlit as st
 from PIL import Image
-import numpy as np
 import base64
 
 from io import BytesIO
@@ -16,6 +15,8 @@ from langchain.prompts import (
     SystemMessagePromptTemplate,
     HumanMessagePromptTemplate
 )
+from dotenv import load_dotenv
+load_dotenv()
 
 
 def image_to_base64(img: Image.Image) -> str:
@@ -83,7 +84,7 @@ chain = ConversationChain(
 )
 
 # Streamlitによって、タイトル部分のUIをの作成
-st.title("優子さんとのチャットルーム1")
+st.title("優子さんとのチャットルーム")
 st.caption("白松研 中村美音")
 
 # ハリネズミのアイコンのロード
