@@ -26,8 +26,7 @@ def image_to_base64(img: Image.Image) -> str:
 
 
 # ChatGPT-3.5のモデルのインスタンスの作成
-chat = ChatOpenAI(model_name="gpt-3.5-turbo",
-                  openai_api_key="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")
+chat = ChatOpenAI(model_name="gpt-3.5-turbo")
 # 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
 
 # セッション内に保存されたチャット履歴のメモリの取得
