@@ -96,7 +96,7 @@ chain = ConversationChain(
 )
 
 # Streamlitによって、タイトル部分のUIをの作成
-st.title("夢子とのチャットルーム")
+st.title("夢子さんとのチャットルーム")
 st.caption("白松研 中村美音")
 
 # ハリネズミのアイコンのロード
