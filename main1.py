@@ -1,6 +1,5 @@
 # 実験１
 
-import time
 import streamlit as st
 from PIL import Image
 import base64
@@ -122,13 +121,3 @@ if send_button:
         elif isinstance(chat_message, AIMessage):
             ai_message_html = f'<img src="{yuuko_icon_base64}" width="50"/> **優子:** {chat_message.content}'
             st.markdown(ai_message_html, unsafe_allow_html=True)
-
-
-st.set_page_config()
-
-ph = st.empty()
-N = 5*60
-for secs in range(N, 0, -1):
-    mm, ss = secs//60, secs % 60
-    ph.metric("Countdown", f"{mm:02d}:{ss:02d}")
-    time.sleep(1)
